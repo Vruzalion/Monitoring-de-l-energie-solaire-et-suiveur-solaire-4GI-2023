@@ -1,0 +1,27 @@
+							 RECHERCHE PERSONNELLE SUR LE PROJET D'ELECTRONIQUE ET INTERFACAGE
+
+Le projet porte sur le monitoring de l'energie solaire et un suiveur de soleil. Pour realiser ledit projet il nous faudra concevoir un appareil
+equipe d'un systeme electromecanique visant a orienter en temps reel les capteurs vers le soleil pour placer le panneau dans une position optimale ceci en en effectuant les mouvements de rotation dependemment de la trajectoire des rayonnements lumineux...En d'autre terme elle fera une sorte de calcul de la quantite du flux lumineux.
+En effet le principe de fonctionnement dudit appareil est tres simple, il faudra faire une boucle de regulation c'est a dire que notre appareil 
+sera constitue de moteurs qui effectuerons la rotation de notre plaque solaire (Capteur solaire) cette derniere etant equipee de capteurs... Et c'est celui qui capturera le plus grand flux lumineux recu 
+qui sera privilege et donc fera signe aux moteurs pour la rotation de la plaque avec une vitesse bien precise du coup il faudra prevoir un regulateur de vitesse.
+En ce qui concerne les moteurs, j'ai pris connaissance d'un moteur qui est extremement qualifie pour ce type de tache :le servomoteur. Un servomoteur optimise la rotation de maniere positive
+car ce dernier est un systeme asservis (systeme dont l'objet est d'atteindre le plus rapidement possible sa valeur de consigne sans marge d'erreur 
+et de la maintenir peu importe les pertubations externes). Les servomoteurs utilisent un cabalge de 3 fils a la difference de certains moteurs... Ils sont constitues d':
+-une carte electronique qui sert d'interface entre les composants mecaniques et electronique car elle recoit les signaux des capteurs et emet une commande aux composants mecanique ;
+-un micro moteur a courant continu qui effectue un mouvement de rotation avec une frequence considerable grace a l'alimentation electrique;
+-un potentiometre qui genere une tension variable proportionelle a l'axe de l'angle de sortie;
+-un train d'engrenage dont le mouvement est transmit par le moteur;
+-une butee dont le mouvement est transmit par le train d'engrenage qui limite l'angle de la rotation;
+-une roue dentee situe a l'axe du potentiometre et de la butee;
+-un palonier qui est ce qu'on observe et qui effectue un mouvement de rotation en synchronisation avec la butee;
+La carte electronique est en liaison avec la carte Arduino par le biais des fils de connexion...Les servomoteurs etant constitues de 3 fils dont le rouge connecte 
+sur la broche de 5v, le noir sur la broche GND et le jaune ou blanc en fonction du constructeur sur la broche D9 de la carte Arduino.
+Ainsi un capteur de lumiere envoirera des signaux aux servomoteurs afin d'operer a la rotation jusqu'a un angle predefini au fur et a mesure que les rayonnements solaire 
+evoluent dans l'espace et dans le temps...Je crois qu'il faut se fixer une valeur du flux lumineux au bout duquel la rotation devrait avoir lieu.
+
+En outre nous pouvons avoir comme outils des photoresistances qui sont des composantes electroniques dont la resistivite dependant de la quantite de lumiere incidente... 
+En effet plus elle est eclairee et plus sa resistivite est basse... Mentionnons le fait que l'on peut avoir risque de deterioriation de ce composant lorsque la quantite de 
+lumiere devient de plus en plus grande. Ce composant est de la meme famille que les capteurs optiques et se nomme plus communement capteur LDR. Sa fonction principale est de calculer l'intensite lumineuse
+recu par le panneau ainsi signaler pour aboutir a une eventuelle rotation du panneau dependemment de cette valeur.
+
